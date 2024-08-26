@@ -1,6 +1,9 @@
 package Methods;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.function.IntBinaryOperator;
 
 public class Kata {
 
@@ -11,10 +14,10 @@ public class Kata {
             int res = n * m;
             return res;
         }
-      }
+    }
 
     // Remove every vocal in the string
-      public static String disemvowel(String str) {
+    public static String disemvowel(String str) {
         String vowels = "aeiouAEIOU";
         StringBuilder result = new StringBuilder();
         for( char ch : str.toCharArray()){
@@ -64,19 +67,19 @@ public class Kata {
 
     // Count every true in the Boolean array 
     // ( Wrapper class Boolean not a primitive boolean, be carefull with the "null" )
-    public static int countSheeps(Boolean[] arrayOfSheeps) {
-        int counter = 0;
-        for( Boolean value : arrayOfSheeps){
-            if(value != null && value){
-                counter++;
+        public static int countSheeps(Boolean[] arrayOfSheeps) {
+            int counter = 0;
+            for( Boolean value : arrayOfSheeps){
+                if(value != null && value){
+                    counter++;
+                }
             }
-        }
         return counter;
       }
 
     // In this little assignment you are given a string of space 
     // separated numbers, and have to return the highest and lowest number.
-      public static String highAndLow(String numbers) {
+    public static String highAndLow(String numbers) {
         String [] parts = numbers.split(" ");
         int highest = Integer.MIN_VALUE;
         int lowest = Integer.MAX_VALUE;
@@ -87,29 +90,42 @@ public class Kata {
             if(num < lowest) lowest = num;
         }
         return highest + " " + lowest;
-      }
+    }
 
-      public static String oddOrEven (int[] array) {
+    public static String oddOrEven (int[] array) {
         int sum = 0;
         for( int value : array){
             sum += value;
         }
         return sum % 2 == 0 ? "even" : "odd";
-        }
-
-        public static boolean  isIsogram(String str) {
-            str = str.toLowerCase();
-            HashSet<Character> visto = new HashSet<>();
-            for( char c : str.toCharArray()){
-                if( visto.contains(c)){
-                        return false;
-                    }
-                visto.add(c);
-            }
-            return true;
     }
 
+    public static boolean  isIsogram(String str) {
+        str = str.toLowerCase();
+        HashSet<Character> visto = new HashSet<>();
+        for( char c : str.toCharArray()){
+            if( visto.contains(c)){
+                    return false;
+                }
+            visto.add(c);
+        }
+        return true;
+    }
 
+    // Given two numbers and an arithmetic operator (the name of it, as a string), 
+    // return the result of the two numbers having that operator used on them.
+    public static int arithmetic(int a, int b, String operator){
+        Map<String, IntBinaryOperator> operations = new HashMap<>(); 
+        operations.put("add", (x, y) -> x + y);
+        operations.put("subtract", (x, y) -> x - y);
+        operations.put("multiply", (x, y) -> x * y);
+        operations.put("divide", (x, y) -> x / y);
+        IntBinaryOperator op = operations.get(operator);
+        if( op == null){
+            throw new IllegalArgumentException("Invalid operator: " + operator);
+        }
+        return op.applyAsInt(a, b);
+    }
 
 
 }
