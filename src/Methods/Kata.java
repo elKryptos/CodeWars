@@ -127,7 +127,6 @@ public class Kata {
         return op.applyAsInt(a, b);
     }
 
-
 }
 
 
