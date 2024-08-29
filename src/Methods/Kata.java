@@ -127,6 +127,16 @@ public class Kata {
         return op.applyAsInt(a, b);
     }
 
+    public static int squareDigits(int n) {
+        String number = Integer.toString(n);
+        StringBuilder result = new StringBuilder();
+        for( char value : number.toCharArray()){
+            int digit = Character.getNumericValue(value);
+            int squared = digit * digit;
+            result.append(squared);
+        }
+        return Integer.parseInt(result.toString());
+      }
 }
 
 
