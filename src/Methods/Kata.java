@@ -1,5 +1,6 @@
 package Methods;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -127,6 +128,7 @@ public class Kata {
         return op.applyAsInt(a, b);
     }
 
+    // You are asked to square every digit of a number and concatenate them
     public static int squareDigits(int n) {
         String number = Integer.toString(n);
         StringBuilder result = new StringBuilder();
@@ -136,7 +138,8 @@ public class Kata {
             result.append(squared);
         }
         return Integer.parseInt(result.toString());
-      }
+    }
+    
 }
 
 
