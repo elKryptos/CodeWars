@@ -190,16 +190,34 @@ public class Kata {
             return null;
         } else {
             StringBuilder sb = new StringBuilder();
-        String [] words = phrase.split(" ");
-        for (String value : words){
-            if (value.length() >= 0) {
-                sb.append(Character.toUpperCase(value.charAt(0)))
-                .append(value.substring(1).toLowerCase());
+            String [] words = phrase.split(" ");
+            for (String value : words){
+                if (value.length() >= 0) {
+                    sb.append(Character.toUpperCase(value.charAt(0)))
+                    .append(value.substring(1).toLowerCase());
+                }
+                sb.append(" ");
             }
-            sb.append(" ");
+            return sb.toString().trim();
         }
-        return sb.toString().trim();
+    }
+
+    /** The goal of this exercise is to convert a string to a new string where each character 
+     * in the new string is "(" if that character appears only once in the original string, 
+     * or ")" if that character appears more than once in the original string. Ignore capitalization 
+     * when determining if a character is a duplicate.*/
+    static String encode(String word){
+        word = word.toLowerCase();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < word.length(); i++){
+            char currentChar = word.charAt(i);
+            if(word.indexOf(currentChar) != word.lastIndexOf(currentChar)){
+                sb.append(')');
+            } else {
+                sb.append('(');
+            }
         }
+        return sb.toString();
     }
 }
 
