@@ -217,13 +217,20 @@ public class Kata {
         }
         return sb.toString();
     }
+
+    public static int duplicateCount(String text){
+        Map<Character, Integer> charCountMap = new HashMap<>();
+        text = text.toLowerCase();
+        for (char c : text.toCharArray()){
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+
+        int duplicateCount = 0;
+        for (int count : charCountMap.values()) {
+            if (count > 1) {
+                duplicateCount++;
+            }
+        }
+        return duplicateCount;
+    }
 }
-
-
-    
-    
-
-
-
-
-
