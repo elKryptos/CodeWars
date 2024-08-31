@@ -1,7 +1,5 @@
 package Methods;
 
-import java.math.BigInteger;
-import java.nio.charset.CharacterCodingException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -9,8 +7,8 @@ import java.util.function.IntBinaryOperator;
 
 public class Kata {
 
-    public static int paperWork(int n, int m) {
-        if ( n <= 0 || m <= 0){
+    public static int paperWork(int n, int m){
+        if (n <= 0 || m <= 0) {
             return 0;
         } else{
             int res = n * m;
@@ -22,8 +20,8 @@ public class Kata {
     public static String disemvowel(String str) {
         String vowels = "aeiouAEIOU";
         StringBuilder result = new StringBuilder();
-        for( char ch : str.toCharArray()){
-            if( vowels.indexOf(ch) == -1 ){
+        for (char ch : str.toCharArray()) {
+            if (vowels.indexOf(ch) == -1 ) {
                 result.append(ch);
             }
         }
@@ -35,7 +33,7 @@ public class Kata {
        If the array does not contain any numbers then you should return 0. **/
     public static double sum(double[] numbers) {
         double sum = 0.0;
-        for( double number : numbers) {
+        for (double number : numbers) {
             sum += number; 
         }
         return sum;
@@ -63,16 +61,16 @@ public class Kata {
     }
      
     // Convert an Array of words to a String
-    public static String smash(String... words) {
+    public static String smash(String... words){
         return String.join(" ", words);
     }
 
     // Count every true in the Boolean array 
     // ( Wrapper class Boolean not a primitive boolean, be carefull with the "null" )
-        public static int countSheeps(Boolean[] arrayOfSheeps) {
+        public static int countSheeps(Boolean[] arrayOfSheeps){
             int counter = 0;
-            for( Boolean value : arrayOfSheeps){
-                if(value != null && value){
+            for (Boolean value : arrayOfSheeps) {
+                if (value != null && value) {
                     counter++;
                 }
             }
@@ -81,32 +79,32 @@ public class Kata {
 
     // In this little assignment you are given a string of space 
     // separated numbers, and have to return the highest and lowest number.
-    public static String highAndLow(String numbers) {
+    public static String highAndLow(String numbers){
         String [] parts = numbers.split(" ");
         int highest = Integer.MIN_VALUE;
         int lowest = Integer.MAX_VALUE;
 
         for (String part : parts){
             int num = Integer.parseInt(part);
-            if(num > highest) highest = num;
-            if(num < lowest) lowest = num;
+            if (num > highest) highest = num;
+            if (num < lowest) lowest = num;
         }
         return highest + " " + lowest;
     }
 
-    public static String oddOrEven (int[] array) {
+    public static String oddOrEven(int[] array){
         int sum = 0;
-        for( int value : array){
+        for (int value : array) {
             sum += value;
         }
         return sum % 2 == 0 ? "even" : "odd";
     }
 
-    public static boolean  isIsogram(String str) {
+    public static boolean  isIsogram(String str){
         str = str.toLowerCase();
         HashSet<Character> visto = new HashSet<>();
-        for( char c : str.toCharArray()){
-            if( visto.contains(c)){
+        for (char c : str.toCharArray()) {
+            if (visto.contains(c)) {
                     return false;
                 }
             visto.add(c);
@@ -123,7 +121,7 @@ public class Kata {
         operations.put("multiply", (x, y) -> x * y);
         operations.put("divide", (x, y) -> x / y);
         IntBinaryOperator op = operations.get(operator);
-        if( op == null){
+        if (op == null) {
             throw new IllegalArgumentException("Invalid operator: " + operator);
         }
         return op.applyAsInt(a, b);
@@ -133,7 +131,7 @@ public class Kata {
     public static int squareDigits(int n) {
         String number = Integer.toString(n);
         StringBuilder result = new StringBuilder();
-        for( char value : number.toCharArray()){
+        for (char value : number.toCharArray()) {
             int digit = Character.getNumericValue(value);
             int squared = digit * digit;
             result.append(squared);
@@ -144,7 +142,7 @@ public class Kata {
     // find the sum of all the integers between and including them 
     // and return it. If the two numbers are equal return a or b.
     public int GetSum(int a, int b) {
-        if( a == b) { 
+        if (a == b) { 
             return a;
         } else {
             return a + b;
@@ -155,11 +153,11 @@ public class Kata {
     // contain anything but exactly 4 digits or exactly 6 digits. 
     // If the function is passed a valid PIN string, return true, else return false.
     public static boolean validatePin(String pin) {
-        if(pin.length() != 4 && pin.length() != 6) {
+        if (pin.length() != 4 && pin.length() != 6) {
             return false;
         }
-        for( char c : pin.toCharArray() ) {
-            if(!Character.isDigit(c)) {
+        for (char c : pin.toCharArray()) {
+            if (!Character.isDigit(c)) {
                 return false;
             }
         }
@@ -170,7 +168,7 @@ public class Kata {
     // find its opposite (additive inverse).
     public static int opposite(int number){
         int opposite = number;
-        if ( opposite > 0 || opposite < 0){
+        if (opposite > 0 || opposite < 0) {
             opposite = number * -1;
         }
         return opposite; 
