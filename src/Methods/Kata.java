@@ -158,7 +158,6 @@ public class Kata {
         if(pin.length() != 4 && pin.length() != 6) {
             return false;
         }
-
         for( char c : pin.toCharArray() ) {
             if(!Character.isDigit(c)) {
                 return false;
@@ -167,7 +166,26 @@ public class Kata {
         return true;
     }
 
+    // Very simple, given a number (integer / decimal / both depending on the language), 
+    // find its opposite (additive inverse).
+    public static int opposite(int number){
+        int opposite = number;
+        if ( opposite > 0 || opposite < 0){
+            opposite = number * -1;
+        }
+        return opposite; 
+    }
+
+    /** Dati 2 argomenti, uno il nome del animale e l'altro di un piatto, sempre in lowCase,
+     *  le prime e le ultime lettere devono essere uguali
+     */
+    public static boolean feast(String beast, String dish) {
+        return beast.charAt(0) == dish.charAt(0)  && 
+        beast.charAt(beast.length() - 1) == dish.charAt(dish.length() - 1);
+    }        
 }
+
+
     
     
 
