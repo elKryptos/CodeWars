@@ -182,7 +182,25 @@ public class Kata {
     public static boolean feast(String beast, String dish) {
         return beast.charAt(0) == dish.charAt(0)  && 
         beast.charAt(beast.length() - 1) == dish.charAt(dish.length() - 1);
-    }        
+    }
+    
+    // Jaden's Smith Upper case first letter 
+    public String toJadenCase(String phrase){
+        if (phrase == null || phrase.isEmpty()) {
+            return null;
+        } else {
+            StringBuilder sb = new StringBuilder();
+        String [] words = phrase.split(" ");
+        for (String value : words){
+            if (value.length() >= 0) {
+                sb.append(Character.toUpperCase(value.charAt(0)))
+                .append(value.substring(1).toLowerCase());
+            }
+            sb.append(" ");
+        }
+        return sb.toString().trim();
+        }
+    }
 }
 
 
