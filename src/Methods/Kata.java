@@ -234,8 +234,30 @@ public class Kata {
         return duplicateCount;
     }
 
+    // Greet
     public static String greet(String name){
         return "Hello, " + name + " how are you doing today?";
     }
+    
+    // Calculate if the fuel left is enought to reach the next pump
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        double realDistance = mpg * fuelLeft;
+        // if(realDistance >= distanceToPump) return true;
+        // else return false;
+        boolean result = (realDistance >= distanceToPump) ? true : false;
+        return result;
+    }
 
+    /**In a small town the population is p0 = 1000 at the beginning of a year. 
+     * The population regularly increases by 2 percent per year and moreover 50 
+     * new inhabitants per year come to live in the town. How many years does the 
+     * town need to see its population greater than or equal to p = 1200 inhabitants? */
+    public static int nbYear(int p0, double percent, int aug, int p) {
+        int years = 0;
+        while(p0 < p){
+            p0 += (int) (p0 * percent / 100 + aug);
+            years++;
+        }
+        return years;
+    }
 }
