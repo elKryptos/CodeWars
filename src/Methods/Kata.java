@@ -294,4 +294,8 @@ public class Kata {
         }
         return result;
     }
+
+    public static String[] stringToArray(String s) {
+        return s.split(" ");
+      }
 }
