@@ -280,5 +280,18 @@ public class Kata {
             result[i] += x * (i + 1);
         }
         return result;
-      }
+    }
+
+    // 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8) Sommare tutti i numeri di un dato numero dato.
+      public static int summation(int n) {
+        int result = 0;
+        int [] num = new int[n];
+        for (int i = 0; i < n; i++){
+            num [i] = i + 1;  
+        }
+        for (int i = 0; i < n; i++){
+            result += num[i];
+        }
+        return result;
+    }
 }
