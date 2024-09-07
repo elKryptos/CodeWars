@@ -311,4 +311,13 @@ public class Kata {
         }
     }
 
+    // Complete the solution so that it reverses the string passed into it.
+    public static String solution(String str) {
+        char [] inverse = str.toCharArray();
+        String result = "";
+        for (int i = str.length() -1; i >= 0; i--){
+            result += inverse[i];
+        }
+        return result.toString();
+    }
 }
