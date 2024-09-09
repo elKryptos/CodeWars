@@ -21,4 +21,14 @@ public class CodeGrind {
         }
         return maxNum;
     }
+
+    public static int minNum(int[] array){
+        int minNum = array[0];
+        for (int i = 0; i < array.length; i++){
+            if (array[i] < minNum){
+                minNum = array[i];
+            }
+        }
+        return minNum;
+    }
 }
