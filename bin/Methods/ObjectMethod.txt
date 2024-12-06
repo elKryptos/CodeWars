@@ -15,7 +15,7 @@ ArrayList
 	
 	Trova l'indice di un elemento specifico nella ArrayList. //get
 	
-	Ordina gli elementi della ArrayList.
+	Ordina gli elementi della ArrayList. //Collections.sort(x)
 	
 	Copia tutti gli elementi di una ArrayList in un'altra ArrayList.//addAll()
 	
@@ -29,7 +29,7 @@ ArrayList
 	
 	Aggiungi un elemento in una posizione specifica nella ArrayList.// add(index, "")
 	
-	Usa un iteratore per scorrere la ArrayList.
+	Usa un iteratore per scorrere la ArrayList. List<String> iter = x.iterator();  while(iter.hasNext()){syout(iter.next())}
 	
 	Usa i metodi subList e clear su una ArrayList. //subList(fromIndex, toIndex)     clear()
 	
