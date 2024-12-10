@@ -114,7 +114,7 @@ public class ArrayListExer {
     System.out.println(lista);
 
     lista.removeAll(persons);
-    System.out.println(lista);
+    System.out.println(lista);  
 
     }
 

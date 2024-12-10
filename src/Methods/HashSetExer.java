@@ -1,9 +1,12 @@
 package Methods;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class HashSetExer {
 
@@ -60,7 +63,29 @@ public class HashSetExer {
     //Svuota un HashSet
     set1.clear();
     System.out.println(set1);
-    //
-
-    }
+    //Converti un HashSet in una lista non modificabile.
+    Collections.unmodifiableSet(set1);
+    //Rimuove elementi che soddisfano una certa condizione
+    set1.add(1);
+    set1.add(2);
+    set1.add(3);
+    set1.add(4);
+    set1.add(5);
+    System.out.println(set1);
+    set1.removeIf( z -> z % 2 == 0);
+    System.out.println(set1);    
+    //Uso di stream per operazioni funzionali
+    set1.stream().forEach(number -> System.out.print(number + " "));
+    System.out.println();
+    Set<Integer> filtro = set2.stream().filter(q -> q % 2 != 0).collect(Collectors.toSet());
+    System.out.println(filtro);
+    //Filtra gli elementi di un HashSet usando una funzione lambda.
+    set2.stream().forEach(y -> System.out.print(y + " "));
+    System.out.println();
+    //Trova gli elementi duplicati in una lista usando HashSet
+    List<Integer> numbers = Arrays.asList(1,2,3,4,5,7,2,4,5,1,2,3);
+    Set<Integer> uniqueNumbers = new HashSet<>(numbers);
+    System.out.println(numbers);
+    System.out.println(uniqueNumbers);
+    }    
 }
