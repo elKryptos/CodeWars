@@ -50,8 +50,8 @@ public class HashSetExer {
     set1.addAll(set2);
     System.out.println(set1);
     //Differenza tra 2 Array
-    set1.removeAll(set2);
-    System.out.println(set1);
+    // set1.removeAll(set2);
+    // System.out.println(set1);
     //Verifica se un HashSet è un sottoinsieme di un altro HashSet
 
     //Usa un iteratore per scorrere un HashSet
