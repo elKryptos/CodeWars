@@ -87,11 +87,11 @@ HashMap
 	
 	Recupera un valore specifico da una HashMap usando la chiave.
 	
-	Verifica se una chiave esiste nella HashMap.
+	Verifica se una chiave esiste nella HashMap.//containsKey(Object key)
 	
-	Verifica se un valore esiste nella HashMap.
+	Verifica se un valore esiste nella HashMap. //containsValue(Object value)
 	
-	Trova la dimensione di una HashMap.
+	Trova la dimensione di una HashMap. //size()
 	
 	Itera attraverso tutte le chiavi di una HashMap.
 	
