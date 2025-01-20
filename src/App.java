@@ -6,5 +6,7 @@ public class App {
         int f = CodeGrind.minNum(array);
         System.out.println(f);
 
+        String testo = "Hans";
+        System.out.println(CodeGrind.inverse(testo).toString());
     }
 }
