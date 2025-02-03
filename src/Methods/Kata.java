@@ -59,4 +59,45 @@ public class Kata {
         StringBuilder sb = new StringBuilder(text);
         return sb.reverse().toString();
     }
+
+    //fibonacci ricorsivo
+    public static int fibonacciRec(int n) {
+        if (n <= 0) return 0;
+        if (n == 1) return 1;
+        return fibonacciRec(n - 1) + fibonacciRec(n - 2);
+    }
+
+    //fibonacci iterative
+    public static int fibonacciIter(int n) {
+        if (n <= 0) return 0;
+        if (n == 1) return 1;
+        int a = 0, b = 1, c;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b; 
+            b = c;
+        }
+        return b;
+    }
+
+    public static void printer(int n) {
+        for (int i = 0; i <= n; i++) {
+            System.out.print(fibonacciIter(i) + " ");
+        }
+        
+    }
+
+    //fattoriale
+    public static int fattorialeRec(int n) {
+        if (n == 0 || n == 1) return 1;
+        return n * fattorialeRec(n - 1);
+    }
+
+    public static int fattorialeIter(int n) {
+        int result = 1; 
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
 }
