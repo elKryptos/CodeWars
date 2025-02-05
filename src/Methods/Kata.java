@@ -1,5 +1,6 @@
 package Methods;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Kata {
@@ -100,4 +101,40 @@ public class Kata {
         }
         return result;
     }
+
+    public static boolean anagramChecker(String str1, String str2) {
+        str1 = str1.trim().replaceAll("\\s+", "").toLowerCase();
+        str2 = str2.trim().replaceAll("\\s+", "").toLowerCase();
+
+        if (str1.length() != str2.length()) return false;
+
+        char[] c1 = str1.toCharArray();
+        char[] c2 = str1.toCharArray();
+
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+
+        return Arrays.equals(c1, c2);
+    }
+    //anagram to fix, not considering position letters
+    public static boolean anagram2(String str1, String str2) {
+        str1 = str1.trim().replaceAll("\\s+", "").toLowerCase();
+        str2 = str2.trim().replaceAll("\\s+", "").toLowerCase();
+
+        if (str1.length() != str2.length()) return false;
+
+        Map<Character, Integer> charCounter = new HashMap<>();
+        for (char c : str1.toCharArray()) {
+            charCounter.put(c, charCounter.getOrDefault(c, 0) + 1);
+        }
+        for (char c : str2.toCharArray()) {
+            if (!charCounter.containsKey(c)) return false;
+            charCounter.put(c, charCounter.get(c) - 1);
+            if (charCounter.get(c) == 0) charCounter.remove(c);
+
+        }
+        return charCounter.isEmpty();
+    }
+
+
 }
