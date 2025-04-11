@@ -1,6 +1,5 @@
 package Methods;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Kata {
@@ -35,8 +34,8 @@ public class Kata {
 
     //Find the missing number
     public static int finder(int[] numbers) {
-        int l = numbers.length + 1;
-        int addition = (l * (l + 1)) / 2;
+        int n = numbers.length + 1;
+        int addition = (n * (n + 1)) / 2;
         int actual = 0;
         for (int i = 0; i < numbers.length; i++) {
             actual += numbers[i];
@@ -54,6 +53,20 @@ public class Kata {
             parole[l - i -1] = temp;
         }
         return new String(parole);
+    }
+
+    public static String reverse3(String text) {
+        char[] parole = text.toCharArray();
+        int l = parole.length;
+        for (int  i = 0; i < l/2; i++) {
+            char temp = parole[i];
+            parole[i] = parole[l -i -1];
+            parole[l-i-1] = temp;
+        }
+
+        return new String(parole);
+
+
     }
 
     public static String reverse2(String text) {
@@ -85,7 +98,6 @@ public class Kata {
         for (int i = 0; i <= n; i++) {
             System.out.print(fibonacciIter(i) + " ");
         }
-        
     }
 
     //fattoriale
